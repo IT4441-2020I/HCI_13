@@ -1,0 +1,45 @@
+.title{
+    font-weight: bold;
+    font-size: 20px;
+}
+.thanhtiendo{
+    text-align: center;
+}
+.thanhtiendo0{
+    width: 290px;
+    height: 15px;
+    background-color:#CFCFCF;
+    border-radius: 7px;
+    margin: auto;
+}
+.thanhtiendo1{
+    width: 290px;
+    height: 15px;
+    background-color: #884DFB;
+    border-radius: 7px;
+    margin: auto;
+}
+.thanhtiendo2{
+    width: 210px;
+    height: 15px;
+    background-color: #884DFB;
+    border-radius: 7px;
+    margin: auto;
+    margin-left: 0px;
+}
+.thanhtiendo3{
+    width: 145px;
+    height: 15px;
+    background-color: #884DFB;
+    border-radius: 7px;
+    margin: auto;
+    margin-left: 0px;
+}
+.thanhtiendo4{
+    width: 15px;
+    height: 15px;
+    background-color: #884DFB;
+    border-radius: 7px;
+    margin: auto;
+    margin-left: 0px;
+}
