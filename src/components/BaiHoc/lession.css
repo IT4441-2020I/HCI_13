@@ -1,0 +1,20 @@
+.topic-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 3rem;
+  color: #224580;
+}
+
+.lession-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 3em;
+}
+
+.lession-item__title,
+.lession-item__content {
+  margin: 1.5em 0;
+  padding: 0 2em;
+  height: 4em;
+  border-radius: 2em;
+}

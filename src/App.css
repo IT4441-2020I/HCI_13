@@ -1,8 +1,26 @@
-.nav{
+.nav {
   border-bottom: 4px solid LightGray;
 }
-.logo{
+.logo {
   font-size: 35px;
-  color: #884DFB;
+  color: #884dfb;
   font-weight: 500;
+}
+
+button {
+  border: none;
+}
+
+.button-primary {
+  background-color: #884dfb;
+  color: white;
+}
+
+.button-secondary {
+  background-color: #ebdeff;
+  color: #224580;
+}
+
+.box-shadow {
+  box-shadow: 0px 3px 4px #888 !important;
 }

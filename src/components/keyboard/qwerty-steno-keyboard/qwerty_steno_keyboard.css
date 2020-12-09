@@ -1,0 +1,32 @@
+.qwerty-steno-keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qwerty-steno-keyboard .qwerty-steno-key {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  height: 2.5em;
+  border-radius: 5%;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+}
+
+.upper,
+.lower {
+  text-align: center;
+  line-height: 1.25em;
+}
+
+.lower {
+  color: #c0c0c0;
+}
+
+.letter {
+  width: 2.5em;
+}

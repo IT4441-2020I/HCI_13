@@ -1,0 +1,27 @@
+.steno-keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upper-bank,
+.lower-bank,
+.steno-vowel-keys {
+  margin-top: 8px;
+}
+
+.steno-keyboard .steno-key {
+  float: left;
+  font-size: 24px;
+  height: 2.5em;
+  width: 1.5em;
+  text-align: center;
+  margin: 0 4px;
+  line-height: 2em;
+  /* border-radius: 12.5% 12.5% 30% 30%; */
+  border-top-left-radius: 12.5% 7.5%;
+  border-top-right-radius: 12.5% 7.5%;
+  border-bottom-right-radius: 50% 30%;
+  border-bottom-left-radius: 50% 30%;
+  background-color: pink;
+}
