@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 import "./lession.css";
 
 function LessionItem(props) {
-    const { title, lessionStartRef, lessionEndRef } = props;
+    const { title, lessionStartRef, lessionEndRef, showLessionContent } = props;
     const contentRef1 = useRef();
     const contentRef2 = useRef();
 
@@ -47,24 +47,28 @@ function LessionItem(props) {
             <button
                 ref={lessionStartRef}
                 className="button-primary lession-item__title box-shadow"
+                onClick={showLessionContent}
             >
                 {title}
             </button>
             <button
                 ref={contentRef1}
                 className="button-secondary lession-item__content box-shadow"
+                onClick={showLessionContent}
             >
                 Các quy tắc
             </button>
             <button
                 ref={contentRef2}
                 className="button-secondary lession-item__content box-shadow"
+                onClick={showLessionContent}
             >
                 Hướng dẫn cách đặt tay
             </button>
             <button
                 ref={lessionEndRef}
                 className="button-secondary lession-item__content box-shadow"
+                onClick={showLessionContent}
             >
                 Thực hành
             </button>

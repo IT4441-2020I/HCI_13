@@ -1,9 +1,9 @@
 export default function StenoKey(props) {
-  const { keyLetter, isPressed } = props;
+    const { keyLetter, keyId } = props;
 
-  return (
-    <div className={`steno-key shadow ${isPressed ? "pressed" : ""}`}>
-      {keyLetter}
-    </div>
-  );
+    return (
+        <div id={keyId} className="steno-key shadow">
+            {keyLetter}
+        </div>
+    );
 }

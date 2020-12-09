@@ -1,0 +1,15 @@
+.finger {
+  fill: #ffff;
+}
+
+.finger-pressed {
+  fill: #884dfb;
+}
+
+#cls-6 {
+  fill: none;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-linejoin: bevel;
+  stroke-width: 2.27px;
+}

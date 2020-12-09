@@ -2,28 +2,55 @@ import "./steno_keyboard.css";
 import StenoKey from "./StenoKey";
 
 function StenoKeyboard() {
-  const upperBankKeys = ["S", "K", "R", "N", "H", "*", "W", "J", "N", "T"];
-  const lowerBankKeys = ["T", "P", "H", "N", "S", "N", "Y", "J", "F", "K"];
-  const vowelKeys = ["U", "O", "E", "A"];
-  return (
-    <div className="steno-keyboard">
-      <div className="upper-bank">
-        {upperBankKeys.map((keyLetter, index) => (
-          <StenoKey key={index} keyLetter={keyLetter} />
-        ))}
-      </div>
-      <div className="lower-bank">
-        {lowerBankKeys.map((keyLetter, index) => (
-          <StenoKey key={index} keyLetter={keyLetter} />
-        ))}
-      </div>
-      <div className="steno-vowel-keys">
-        {vowelKeys.map((keyLetter, index) => (
-          <StenoKey key={index} keyLetter={keyLetter} />
-        ))}
-      </div>
-    </div>
-  );
+    const upperBankKeys = [
+        { keyLetter: "S", keyId: "q" },
+        { keyLetter: "K", keyId: "w" },
+        { keyLetter: "R", keyId: "e" },
+        { keyLetter: "N", keyId: "r" },
+        { keyLetter: "H", keyId: "t" },
+        { keyLetter: "*", keyId: "u" },
+        { keyLetter: "W", keyId: "i" },
+        { keyLetter: "J", keyId: "o" },
+        { keyLetter: "N", keyId: "p" },
+        { keyLetter: "T", keyId: "[" },
+    ];
+    const lowerBankKeys = [
+        { keyLetter: "T", keyId: "a" },
+        { keyLetter: "P", keyId: "s" },
+        { keyLetter: "H", keyId: "d" },
+        { keyLetter: "N", keyId: "f" },
+        { keyLetter: "S", keyId: "g" },
+        { keyLetter: "N", keyId: "j" },
+        { keyLetter: "Y", keyId: "k" },
+        { keyLetter: "J", keyId: "l" },
+        { keyLetter: "F", keyId: ";" },
+        { keyLetter: "K", keyId: "'" },
+    ];
+    const vowelKeys = [
+        { keyLetter: "U", keyId: "c" },
+        { keyLetter: "O", keyId: "v" },
+        { keyLetter: "E", keyId: "n" },
+        { keyLetter: "A", keyId: "m" },
+    ];
+    return (
+        <div className="steno-keyboard">
+            <div className="upper-bank">
+                {upperBankKeys.map(({ keyLetter, keyId }) => (
+                    <StenoKey key={keyId} keyLetter={keyLetter} keyId={keyId} />
+                ))}
+            </div>
+            <div className="lower-bank">
+                {lowerBankKeys.map(({ keyLetter, keyId }) => (
+                    <StenoKey key={keyId} keyLetter={keyLetter} keyId={keyId} />
+                ))}
+            </div>
+            <div className="steno-vowel-keys">
+                {vowelKeys.map(({ keyLetter, keyId }) => (
+                    <StenoKey key={keyId} keyLetter={keyLetter} keyId={keyId} />
+                ))}
+            </div>
+        </div>
+    );
 }
 
 export default StenoKeyboard;

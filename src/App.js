@@ -15,7 +15,6 @@ class App extends Component {
                 <Nav />
                 <Router>
                     <div className="container">
-                        <br />
                         <Switch>
                             <Route exact path="/" component={Home} />
                             <Route path="/baihoc" component={BaiHoc} />

@@ -1,6 +1,7 @@
 import LeaderLine from "react-leader-line";
 import LessionItem from "./LessionItem";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import LessionContent from "./LessionContent";
 
 function LessionsList() {
     const lession1StartRef = useRef();
@@ -11,6 +12,8 @@ function LessionsList() {
     const lession2EndRef = useRef();
     const lession3EndRef = useRef();
     const lession4EndRef = useRef();
+
+    const [lessionContent, setLessionContent] = useState(null);
 
     const lessions = [
         {
@@ -72,12 +75,26 @@ function LessionsList() {
             line2.remove();
             line3.remove();
         };
-    });
+    }, []);
+
+    const showLessionContent = () => {
+        setLessionContent({});
+        document.body.style.overflow = "hidden";
+    };
+
+    const hideLessionContent = () => {
+        document.querySelector(".lession-wrapper").style.transform =
+            "translateY(100%)";
+        setTimeout(() => {
+            setLessionContent(null);
+            document.body.style.overflow = "auto";
+        }, 300);
+    };
 
     return (
         <>
-            <div className="topic-header">Học gõ âm đầu</div>
-            <div className="row">
+            <h3 className="topic-header">Học gõ âm đầu</h3>
+            <div className="lessions-list row">
                 {lessions.map(
                     ({ title, lessionStartRef, lessionEndRef }, index) => (
                         <LessionItem
@@ -85,10 +102,17 @@ function LessionsList() {
                             title={title}
                             lessionStartRef={lessionStartRef}
                             lessionEndRef={lessionEndRef}
+                            showLessionContent={showLessionContent}
                         />
                     )
                 )}
             </div>
+            {lessionContent && (
+                <>
+                    <div className="lession-overlay" />
+                    <LessionContent hideLessionContent={hideLessionContent} />
+                </>
+            )}
         </>
     );
 }

@@ -1,8 +1,8 @@
 .topic-header {
-  font-size: 24px;
   font-weight: bold;
   margin-left: 3rem;
   color: #224580;
+  text-transform: uppercase;
 }
 
 .lession-item {
@@ -17,4 +17,100 @@
   padding: 0 2em;
   height: 4em;
   border-radius: 2em;
+}
+
+.lession-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.lession-wrapper {
+  position: fixed;
+  top: 5rem;
+  bottom: 0;
+  left: 0;
+  width: calc(100vw - 16.6667%);
+  margin: 0 8.3333%;
+  padding: 2rem 3rem;
+  z-index: 20;
+  background-color: white;
+  animation: slideUpFromDown 0.5s ease-out;
+  overflow: auto;
+  transition: transform 0.3s;
+}
+
+.close-icon {
+  position: fixed;
+  right: 91.6667%;
+  top: 5rem;
+  padding: 0.25em 0.25em;
+  font-size: 36px;
+  background-color: white;
+  color: grey;
+  z-index: 20;
+  border-top-left-radius: 2em;
+  border-bottom-left-radius: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.close-icon:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.lession-title {
+  margin-left: 3rem;
+  font-weight: 400;
+}
+
+.rules-section {
+  margin: 5em auto;
+  width: 300px;
+}
+
+.rules-section .table-name {
+  text-align: end;
+}
+
+.rules-table th,
+.rules-table td {
+  width: 150px;
+  line-height: 2em;
+}
+
+.guide-section {
+  padding: 0 3em;
+}
+
+.guide-section .letters {
+  width: fit-content;
+  margin: 1rem auto;
+}
+
+.guide-section button {
+  font-size: 18px;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25em;
+}
+
+.guide-section .keyboards {
+  margin-bottom: 1rem;
+}
+
+@keyframes slideUpFromDown {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

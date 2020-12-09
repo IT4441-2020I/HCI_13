@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { DropdownButton, Dropdown } from "react-bootstrap";
 import "./App.css";
-import searchIcon from "./static/images/mdi_search.svg";
+import { Icon } from "@iconify/react";
+import magnifyIcon from "@iconify/icons-mdi/magnify";
 
 export default class Nav extends Component {
     logout() {
@@ -47,12 +48,12 @@ export default class Nav extends Component {
                         </ul>
                         <form className="form-inline search-form">
                             <input
-                                class="form-control mr-sm-2"
+                                className="form-control mr-sm-2"
                                 type="text"
                                 placeholder="Search"
                             />
                             <button type="submit">
-                                <img src={searchIcon} alt="Search" />
+                                <Icon icon={magnifyIcon} />
                             </button>
                         </form>
                         {localStorage.getItem("username") ? (

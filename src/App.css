@@ -1,10 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  font-family: "Montserrat", "sans-serif";
+}
+
 .navbar {
   padding-left: 8.33333%;
   padding-right: 8.33333%;
+  height: 5rem;
 }
 
 .container {
-  margin-top: 100px;
+  margin-top: 7rem;
 }
 
 .logo {
@@ -38,10 +45,25 @@
   background-color: rgba(0, 0, 0, 0);
   position: absolute;
   left: 0em;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
 }
 
 button {
   border: none;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+th {
+  background-color: #884dfb;
+  color: white;
 }
 
 .button-primary {
@@ -56,4 +78,10 @@ button {
 
 .box-shadow {
   box-shadow: 0px 3px 4px #888 !important;
+}
+
+.steno-key.pressed,
+.qwerty-steno-key.pressed {
+  background-color: #884dfb !important;
+  color: white;
 }
