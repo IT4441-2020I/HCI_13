@@ -11,22 +11,24 @@ import LessionsList from "./components/BaiHoc/LessionsList";
 class App extends Component {
     render() {
         return (
-            <Router>
-                <div className="container">
-                    <Nav />
-                    <br />
-                    <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/baihoc" component={BaiHoc} />
-                        <Route
-                            path="/topics/:topicId"
-                            component={LessionsList}
-                        />
-                        <Route path="/login" component={Login} />
-                        <Route path="/luyengo" component={LuyenGo} />
-                    </Switch>
-                </div>
-            </Router>
+            <>
+                <Nav />
+                <Router>
+                    <div className="container">
+                        <br />
+                        <Switch>
+                            <Route exact path="/" component={Home} />
+                            <Route path="/baihoc" component={BaiHoc} />
+                            <Route
+                                path="/topics/:topicId"
+                                component={LessionsList}
+                            />
+                            <Route path="/login" component={Login} />
+                            <Route path="/luyengo" component={LuyenGo} />
+                        </Switch>
+                    </div>
+                </Router>
+            </>
         );
     }
 }
