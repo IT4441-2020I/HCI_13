@@ -19,7 +19,7 @@ export default class Home extends Component {
                         <br />
                         <br />
                         <Link
-                            to=""
+                            to="/baihoc"
                             className="start"
                             style={{ fontSize: 25, color: "#FFFFFF" }}
                         >

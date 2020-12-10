@@ -1,8 +1,11 @@
 import { Icon } from "@iconify/react";
 import closeIcon from "@iconify/icons-mdi/close";
-import StenoKeyboard from "../keyboard/steno-keyboard/StenoKeyboard";
 import { useRef, useEffect } from "react";
-import Hands from "../keyboard/Hands";
+import StenoKeyboard, {
+    setStenoKeyPressed,
+    setStenoKeyUnpressed,
+} from "../keyboard/steno-keyboard/StenoKeyboard";
+import Hands, { setFingerPressed, setFingerUnpressed } from "../keyboard/Hands";
 
 function LessionContent(props) {
     const { hideLessionContent } = props;
@@ -20,12 +23,8 @@ function LessionContent(props) {
         } = previousSelectedLetter.current;
 
         // Remove previous selection
-        document
-            .querySelector(`.steno-keyboard #${previousStenoKeyId}`)
-            .classList.remove("pressed");
-        document
-            .querySelector(`.hands #${previousFingerId}`)
-            .classList.remove("finger-pressed");
+        setStenoKeyUnpressed(previousStenoKeyId);
+        setFingerUnpressed(previousFingerId);
         const previousButton = document.querySelector(
             `.letters button#${previousButtonId}`
         );
@@ -33,20 +32,16 @@ function LessionContent(props) {
         previousButton.classList.add("button-secondary");
 
         // Update new selection
-        const stenoKey = event.target.attributes["steno-key"].value;
-        document
-            .querySelector(`.steno-keyboard #${stenoKey}`)
-            .classList.add("pressed");
+        const stenoKeyId = event.target.attributes["steno-key"].value;
+        setStenoKeyPressed(stenoKeyId);
         const fingerId = event.target.attributes["finger-id"].value;
-        document
-            .querySelector(`.hands #${fingerId}`)
-            .classList.add("finger-pressed");
+        setFingerPressed(fingerId);
         event.target.classList.remove("button-secondary");
         event.target.classList.add("button-primary");
 
-        // Update previous selection
+        // Set current selection to previous selection
         previousSelectedLetter.current = {
-            previousStenoKeyId: stenoKey,
+            previousStenoKeyId: stenoKeyId,
             previousButtonId: event.target.id,
             previousFingerId: fingerId,
         };
@@ -169,9 +164,7 @@ function LessionContent(props) {
                     <div className="keyboards">
                         <StenoKeyboard />
                     </div>
-                    <div className="hands">
-                        <Hands />
-                    </div>
+                    <Hands />
                 </section>
             </div>
         </>

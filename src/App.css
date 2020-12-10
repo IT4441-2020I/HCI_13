@@ -54,16 +54,8 @@ button {
   border: none;
 }
 
-table,
-th,
-td {
-  border: 1px solid black;
-  text-align: center;
-}
-
-th {
-  background-color: #884dfb;
-  color: white;
+a {
+  color: inherit;
 }
 
 .button-primary {

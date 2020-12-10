@@ -53,4 +53,19 @@ function StenoKeyboard() {
     );
 }
 
+function setStenoKeyPressed(keyId) {
+    const stenoKey = document.querySelector(`.steno-keyboard #${keyId}`);
+    if (stenoKey !== null && !stenoKey.classList.contains("pressed")) {
+        stenoKey.classList.add("pressed");
+    }
+}
+
+function setStenoKeyUnpressed(keyId) {
+    const stenoKey = document.querySelector(`.steno-keyboard #${keyId}`);
+    if (stenoKey !== null) {
+        stenoKey.classList.remove("pressed");
+    }
+}
+
 export default StenoKeyboard;
+export { setStenoKeyPressed, setStenoKeyUnpressed };
