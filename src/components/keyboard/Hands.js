@@ -88,17 +88,25 @@ function Hands() {
 
 function setFingerPressed(fingerId) {
     const finger = document.querySelector(`.hands #${fingerId}`);
-    if (finger !== null && !finger.classList.contains("finger-pressed")) {
-        finger.classList.add("finger-pressed");
+    if (finger !== null && !finger.classList.contains("pressed")) {
+        finger.classList.add("pressed");
+    }
+}
+
+function setFingerWrongPressed(fingerId) {
+    const finger = document.querySelector(`.hands #${fingerId}`);
+    if (finger !== null && !finger.classList.contains("wrong-pressed")) {
+        finger.classList.add("wrong-pressed");
     }
 }
 
 function setFingerUnpressed(fingerId) {
     const finger = document.querySelector(`.hands #${fingerId}`);
     if (finger !== null) {
-        finger.classList.remove("finger-pressed");
+        finger.classList.remove("pressed");
+        finger.classList.remove("wrong-pressed");
     }
 }
 
 export default Hands;
-export { setFingerPressed, setFingerUnpressed };
+export { setFingerPressed, setFingerWrongPressed, setFingerUnpressed };

@@ -2,6 +2,7 @@
 
 * {
   font-family: "Montserrat", "sans-serif";
+  font-weight: 700;
 }
 
 .navbar {
@@ -17,11 +18,9 @@
 .logo {
   font-size: 35px;
   color: #884dfb;
-  font-weight: 500;
 }
 
 .nav-link {
-  font-weight: 500;
   color: #808080;
   padding-left: 1em !important;
   padding-right: 1em !important;
@@ -52,6 +51,7 @@
 
 button {
   border: none;
+  background-color: white;
 }
 
 a {
@@ -73,7 +73,15 @@ a {
 }
 
 .steno-key.pressed,
-.qwerty-steno-key.pressed {
+.steno-key.pressed.wrong-pressed,
+.qwerty-steno-key.pressed,
+.qwerty-steno-key.pressed.wrong-pressed {
   background-color: #884dfb !important;
+  color: white;
+}
+
+.steno-key.wrong-pressed,
+.qwerty-steno-key.wrong-pressed {
+  background-color: red !important;
   color: white;
 }

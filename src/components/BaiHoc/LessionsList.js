@@ -85,9 +85,10 @@ function LessionsList() {
     const hideLessionContent = () => {
         document.querySelector(".lession-wrapper").style.transform =
             "translateY(100%)";
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setLessionContent(null);
             document.body.style.overflow = "auto";
+            clearTimeout(timer);
         }, 300);
     };
 

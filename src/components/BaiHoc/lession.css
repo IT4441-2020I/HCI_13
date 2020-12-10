@@ -36,14 +36,30 @@
   top: 5rem;
   bottom: 0;
   left: 0;
+  width: 100vw;
+  animation: slideUpFromDown 0.5s linear;
+  transition: transform 0.3s;
+  z-index: 15;
+}
+
+.lession-content-wrapper,
+.lession-practice-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: calc(100vw - 16.6667%);
   margin: 0 8.3333%;
   padding: 2rem 3rem;
   z-index: 20;
   background-color: white;
-  animation: slideUpFromDown 0.5s ease-out;
-  overflow: auto;
   transition: transform 0.3s;
+  overflow: auto;
+}
+
+.lession-practice-wrapper {
+  animation: slideUpFromDown 0.5s linear;
+  overflow: hidden;
 }
 
 .close-icon {
@@ -71,51 +87,35 @@
   font-weight: 400;
 }
 
-.rules-section {
-  margin: 5em auto;
-  width: 300px;
+#next-key,
+#hide-practice-button,
+#practice-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.rules-section .table-name {
-  text-align: end;
-}
-
-.rules-table th,
-.rules-table td {
-  width: 150px;
-  line-height: 2em;
-  text-align: center;
-}
-
-.rules-table,
-.rules-table th,
-.rules-table td {
-  border: 1px solid black;
-}
-
-table.rules-table th {
-  background-color: #884dfb;
-  color: white;
-}
-
-.guide-section {
-  padding: 0 3em;
-}
-
-.guide-section .letters {
-  width: fit-content;
+#practice-button {
   margin: 1rem auto;
 }
 
-.guide-section button {
-  font-size: 18px;
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25em;
+#next-key:hover,
+#hide-practice-button:hover,
+#practice-button:hover {
+  color: #884dfb;
 }
 
-.guide-section .keyboards {
-  margin-bottom: 1rem;
+#hide-practice-button svg,
+#practice-button svg {
+  font-size: 24px;
+}
+
+#next-key {
+  font-size: 14px;
+}
+
+#next-key svg {
+  font-size: 20px;
 }
 
 @keyframes slideUpFromDown {

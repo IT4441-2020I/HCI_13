@@ -3,34 +3,34 @@ import StenoKey from "./StenoKey";
 
 function StenoKeyboard() {
     const upperBankKeys = [
-        { keyLetter: "S", keyId: "q" },
-        { keyLetter: "K", keyId: "w" },
-        { keyLetter: "R", keyId: "e" },
-        { keyLetter: "N", keyId: "r" },
-        { keyLetter: "H", keyId: "t" },
-        { keyLetter: "*", keyId: "u" },
-        { keyLetter: "W", keyId: "i" },
-        { keyLetter: "J", keyId: "o" },
-        { keyLetter: "N", keyId: "p" },
-        { keyLetter: "T", keyId: "[" },
+        { keyLetter: "S", keyId: "key81" },
+        { keyLetter: "K", keyId: "key87" },
+        { keyLetter: "R", keyId: "key69" },
+        { keyLetter: "N", keyId: "key82" },
+        { keyLetter: "H", keyId: "key84" },
+        { keyLetter: "*", keyId: "key85" },
+        { keyLetter: "W", keyId: "key73" },
+        { keyLetter: "J", keyId: "key79" },
+        { keyLetter: "N", keyId: "key80" },
+        { keyLetter: "T", keyId: "key219" },
     ];
     const lowerBankKeys = [
-        { keyLetter: "T", keyId: "a" },
-        { keyLetter: "P", keyId: "s" },
-        { keyLetter: "H", keyId: "d" },
-        { keyLetter: "N", keyId: "f" },
-        { keyLetter: "S", keyId: "g" },
-        { keyLetter: "N", keyId: "j" },
-        { keyLetter: "Y", keyId: "k" },
-        { keyLetter: "J", keyId: "l" },
-        { keyLetter: "F", keyId: ";" },
-        { keyLetter: "K", keyId: "'" },
+        { keyLetter: "T", keyId: "key65" },
+        { keyLetter: "P", keyId: "key83" },
+        { keyLetter: "H", keyId: "key68" },
+        { keyLetter: "N", keyId: "key70" },
+        { keyLetter: "S", keyId: "key71" },
+        { keyLetter: "N", keyId: "key74" },
+        { keyLetter: "Y", keyId: "key75" },
+        { keyLetter: "J", keyId: "key76" },
+        { keyLetter: "F", keyId: "key59" },
+        { keyLetter: "K", keyId: "key222" },
     ];
     const vowelKeys = [
-        { keyLetter: "U", keyId: "c" },
-        { keyLetter: "O", keyId: "v" },
-        { keyLetter: "E", keyId: "n" },
-        { keyLetter: "A", keyId: "m" },
+        { keyLetter: "U", keyId: "key67" },
+        { keyLetter: "O", keyId: "key86" },
+        { keyLetter: "E", keyId: "key78" },
+        { keyLetter: "A", keyId: "key77" },
     ];
     return (
         <div className="steno-keyboard">
@@ -53,19 +53,33 @@ function StenoKeyboard() {
     );
 }
 
-function setStenoKeyPressed(keyId) {
-    const stenoKey = document.querySelector(`.steno-keyboard #${keyId}`);
+function setStenoKeyPressed(keyId, parentSelector = "") {
+    const stenoKey = document.querySelector(
+        `${parentSelector} .steno-keyboard #${keyId}`
+    );
     if (stenoKey !== null && !stenoKey.classList.contains("pressed")) {
         stenoKey.classList.add("pressed");
     }
 }
 
-function setStenoKeyUnpressed(keyId) {
-    const stenoKey = document.querySelector(`.steno-keyboard #${keyId}`);
+function setStenoKeyWrongPressed(keyId, parentSelector = "") {
+    const stenoKey = document.querySelector(
+        `${parentSelector} .steno-keyboard #${keyId}`
+    );
+    if (stenoKey !== null && !stenoKey.classList.contains("wrong-pressed")) {
+        stenoKey.classList.add("wrong-pressed");
+    }
+}
+
+function setStenoKeyUnpressed(keyId, parentSelector = "") {
+    const stenoKey = document.querySelector(
+        `${parentSelector} .steno-keyboard #${keyId}`
+    );
     if (stenoKey !== null) {
         stenoKey.classList.remove("pressed");
+        stenoKey.classList.remove("wrong-pressed");
     }
 }
 
 export default StenoKeyboard;
-export { setStenoKeyPressed, setStenoKeyUnpressed };
+export { setStenoKeyPressed, setStenoKeyWrongPressed, setStenoKeyUnpressed };

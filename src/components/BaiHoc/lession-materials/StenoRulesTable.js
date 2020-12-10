@@ -1,3 +1,5 @@
+import "./steno_rules_table.css";
+
 function StenoRulesTable() {
     return (
         <section className="rules-section">

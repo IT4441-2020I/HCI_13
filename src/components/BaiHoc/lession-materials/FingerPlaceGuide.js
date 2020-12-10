@@ -7,16 +7,17 @@ import Hands, {
     setFingerUnpressed,
 } from "../../keyboard/Hands";
 import { useRef, useEffect } from "react";
+import "./finger_place_guide.css";
 
 function FingerPlaceGuide() {
     const previousSelectedLetter = useRef({
-        previousStenoKeyId: "q",
+        previousStenoKeyId: "key81",
         previousButtonId: "s",
         previousFingerId: "finger-0",
     });
 
     useEffect(() => {
-        setStenoKeyPressed("q");
+        setStenoKeyPressed("key81");
         setFingerPressed("finger-0");
     }, []);
 
@@ -37,7 +38,7 @@ function FingerPlaceGuide() {
         previousButton.classList.add("button-secondary");
 
         // Update new selection
-        const stenoKeyId = event.target.attributes["steno-key"].value;
+        const stenoKeyId = event.target.attributes["steno-key-id"].value;
         setStenoKeyPressed(stenoKeyId);
         const fingerId = event.target.attributes["finger-id"].value;
         setFingerPressed(fingerId);
@@ -60,7 +61,7 @@ function FingerPlaceGuide() {
                     onClick={selectLetter}
                     id="s"
                     className="button-primary box-shadow"
-                    steno-key="q"
+                    steno-key-id="key81"
                     finger-id="finger-0"
                 >
                     s
@@ -69,7 +70,7 @@ function FingerPlaceGuide() {
                     onClick={selectLetter}
                     id="t"
                     className="button-secondary box-shadow"
-                    steno-key="a"
+                    steno-key-id="key65"
                     finger-id="finger-0"
                 >
                     t
@@ -78,7 +79,7 @@ function FingerPlaceGuide() {
                     onClick={selectLetter}
                     id="k"
                     className="button-secondary box-shadow"
-                    steno-key="w"
+                    steno-key-id="key87"
                     finger-id="finger-1"
                 >
                     k
@@ -87,7 +88,7 @@ function FingerPlaceGuide() {
                     onClick={selectLetter}
                     id="c"
                     className="button-secondary box-shadow"
-                    steno-key="w"
+                    steno-key-id="key87"
                     finger-id="finger-1"
                 >
                     c
@@ -96,7 +97,7 @@ function FingerPlaceGuide() {
                     onClick={selectLetter}
                     id="h"
                     className="button-secondary box-shadow"
-                    steno-key="d"
+                    steno-key-id="key68"
                     finger-id="finger-2"
                 >
                     h
@@ -105,7 +106,7 @@ function FingerPlaceGuide() {
                     onClick={selectLetter}
                     id="r"
                     className="button-secondary box-shadow"
-                    steno-key="e"
+                    steno-key-id="key69"
                     finger-id="finger-2"
                 >
                     r
