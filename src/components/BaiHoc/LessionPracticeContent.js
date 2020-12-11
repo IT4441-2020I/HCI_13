@@ -4,6 +4,7 @@ import bxRightArrowAlt from "@iconify/icons-bx/bx-right-arrow-alt";
 import StenoKeyboard from "../keyboard/steno-keyboard/StenoKeyboard";
 import Hands from "../keyboard/Hands";
 import StenoInput from "../keyboard/StenoInput";
+import QwertyStenoKeyboad from "../keyboard/qwerty-steno-keyboard/QwertyStenoKeyboard";
 
 function LessionPracticeContent(props) {
     const { hidePracticeContent } = props;
@@ -18,8 +19,11 @@ function LessionPracticeContent(props) {
                 Phím khác
                 <Icon icon={bxRightArrowAlt} />
             </button>
-            <StenoInput />
-            <StenoKeyboard />
+            <StenoInput parentSelector=".lession-practice-wrapper" />
+            <div className="keyboards">
+                <QwertyStenoKeyboad style={{ fontSize: "13px" }} />
+                <StenoKeyboard style={{ fontSize: "20px" }} />
+            </div>
             <Hands />
         </div>
     );

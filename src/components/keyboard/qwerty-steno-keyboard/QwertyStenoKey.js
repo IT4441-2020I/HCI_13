@@ -1,18 +1,21 @@
 function QwertyStenoKey(props) {
-  const { keyType, qwertyKeyLetter, stenoKeyLetter } = props;
+    const { keyType, upperLetter, lowerLetter, lowerLeftLetter, keyId } = props;
 
-  return (
-    <div className={`qwerty-steno-key shadow ${keyType}`}>
-      {stenoKeyLetter ? (
-        <>
-          <div className="upper">{stenoKeyLetter}</div>
-          <div className="lower">{qwertyKeyLetter}</div>
-        </>
-      ) : (
-        qwertyKeyLetter
-      )}
-    </div>
-  );
+    return (
+        <div id={keyId} className={`qwerty-steno-key shadow ${keyType}`}>
+            {upperLetter ? (
+                <>
+                    <div className="upper">{upperLetter}</div>
+                    {lowerLetter && <div className="lower">{lowerLetter}</div>}
+                    {lowerLeftLetter && (
+                        <div className="lower-left">{lowerLeftLetter}</div>
+                    )}
+                </>
+            ) : (
+                lowerLetter
+            )}
+        </div>
+    );
 }
 
 export default QwertyStenoKey;

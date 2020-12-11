@@ -72,6 +72,12 @@ a {
   box-shadow: 0px 3px 4px #888 !important;
 }
 
+.keyboards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .steno-key.pressed,
 .steno-key.pressed.wrong-pressed,
 .qwerty-steno-key.pressed,
