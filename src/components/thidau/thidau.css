@@ -1,0 +1,96 @@
+.racing-game-container {
+  position: relative;
+  height: 15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.street {
+  font-size: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+.street img {
+  height: 100%;
+}
+
+.players-wrapper {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.player {
+  height: 3rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  transition: transform 4s;
+}
+
+.player img {
+  width: 4rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.player .player-name {
+  font-size: 1rem;
+  margin: auto 1rem;
+  border: 1px solid #c4c4c4;
+  padding: 0.15rem 0.5rem;
+  color: black;
+  background-color: lightgrey;
+  border-radius: 2em;
+}
+
+.main-player img {
+  width: 6rem;
+}
+
+.main-player .player-name {
+  font-size: 1.5rem;
+  background-color: cyan;
+}
+
+.exercise-container {
+  margin-top: 3rem;
+  height: 12rem;
+  float: left;
+  width: 66.6667%;
+  padding: 1rem;
+  text-align: justify;
+}
+
+.exercise-container .exercise .true {
+  color: #00ff04;
+}
+
+.exercise-container .exercise .false {
+  color: red;
+}
+
+.exercise-container .exercise-input {
+  width: 100%;
+}
+
+.timer {
+  margin-top: 3rem;
+  font-size: 3rem;
+  float: left;
+  width: calc(33.3333% - 2rem);
+  height: 12rem;
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

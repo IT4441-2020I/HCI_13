@@ -7,27 +7,27 @@ import BaiHoc from "./components/BaiHoc/baihoc";
 import Login from "./components/Login/login";
 import LuyenGo from "./components/LuyenGo/luyengo";
 import LessionsList from "./components/BaiHoc/LessionsList";
+import Thidau from "./components/thidau/Thidau";
 
 class App extends Component {
     render() {
         return (
-            <>
+            <Router>
                 <Nav />
-                <Router>
-                    <div className="container">
-                        <Switch>
-                            <Route exact path="/" component={Home} />
-                            <Route path="/baihoc" component={BaiHoc} />
-                            <Route
-                                path="/topics/:topicId"
-                                component={LessionsList}
-                            />
-                            <Route path="/login" component={Login} />
-                            <Route path="/luyengo" component={LuyenGo} />
-                        </Switch>
-                    </div>
-                </Router>
-            </>
+                <div className="container">
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/baihoc" component={BaiHoc} />
+                        <Route
+                            path="/topics/:topicId"
+                            component={LessionsList}
+                        />
+                        <Route path="/login" component={Login} />
+                        <Route path="/luyengo" component={LuyenGo} />
+                        <Route path="/thidau" component={Thidau} />
+                    </Switch>
+                </div>
+            </Router>
         );
     }
 }
