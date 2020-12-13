@@ -13,44 +13,39 @@ import {
 } from "./qwerty-steno-keyboard/QwertyStenoKeyboard";
 
 function StenoInput(props) {
-    let { parentSelector } = props;
+    let { parentSelector, onKeyDownHook, onKeyUpHook, onChangeHook } = props;
     if (parentSelector === undefined) {
         parentSelector = "";
     }
-    const pressedKeys = [];
 
     const handleKeyDown = (event) => {
-        const { key, keyCode } = event;
+        const { keyCode } = event;
         setStenoKeyWrongPressed(`key${keyCode}`, parentSelector);
         setQwertyStenoKeyWrongPressed(`key${keyCode}`, parentSelector);
-        if (!pressedKeys.includes(key)) {
-            pressedKeys.push(key);
-            event.target.value = pressedKeys.join("");
+
+        if (typeof onKeyDownHook === "function") {
+            onKeyDownHook(event);
         }
     };
 
     const handleKeyUp = (event) => {
-        const { key, keyCode } = event;
+        const { keyCode } = event;
         setStenoKeyUnpressed(`key${keyCode}`, parentSelector);
         setQwertyStenoKeyUnpressed(`key${keyCode}`, parentSelector);
-        const keyIndex = pressedKeys.indexOf(key);
-        if (keyIndex !== -1) {
-            pressedKeys.splice(keyIndex, 1);
-            event.target.value = pressedKeys.join("");
+
+        if (typeof onKeyUpHook === "function") {
+            onKeyUpHook(event);
         }
     };
 
     const handleChange = (event) => {
-        event.target.value = pressedKeys.join("");
-    };
+        if (typeof onChangeHook === "function") {
+            onChangeHook(event);
+        }
+    }
 
     return (
-        <input
-            type="text"
-            onKeyDown={handleKeyDown}
-            onKeyUp={handleKeyUp}
-            onChange={handleChange}
-        />
+        <input type="text" onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} onChange={handleChange} />
     );
 }
 

@@ -7,13 +7,13 @@ import BaiHoc from "./components/BaiHoc/baihoc";
 import Login from "./components/Login/login";
 import LuyenGo from "./components/LuyenGo/luyengo";
 import LessionsList from "./components/BaiHoc/LessionsList";
+import TienDo from "./components/TienDo/tiendo";
 
 class App extends Component {
     render() {
-        return (
-            <>
-                <Nav />
+        return (              
                 <Router>
+                    <Nav/>
                     <div className="container">
                         <Switch>
                             <Route exact path="/" component={Home} />
@@ -24,10 +24,10 @@ class App extends Component {
                             />
                             <Route path="/login" component={Login} />
                             <Route path="/luyengo" component={LuyenGo} />
+                            <Route path="/tiendo" component={TienDo} />
                         </Switch>
                     </div>
                 </Router>
-            </>
         );
     }
 }

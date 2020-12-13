@@ -8,6 +8,20 @@ import QwertyStenoKeyboad from "../keyboard/qwerty-steno-keyboard/QwertyStenoKey
 
 function LessionPracticeContent(props) {
     const { hidePracticeContent } = props;
+    const pressedKeys = new Set();
+
+    const handleKeyDown = (event) => {
+        const { key } = event;
+        pressedKeys.add(key);
+        event.target.value = [...pressedKeys].join("");
+    };
+
+    const handleKeyUp = (event) => {
+        const { key } = event;
+        pressedKeys.delete(key);
+        event.target.value = [...pressedKeys].join("");
+    };
+
     return (
         <div className="lession-practice-wrapper">
             <button id="hide-practice-button" onClick={hidePracticeContent}>
@@ -19,7 +33,11 @@ function LessionPracticeContent(props) {
                 Phím khác
                 <Icon icon={bxRightArrowAlt} />
             </button>
-            <StenoInput parentSelector=".lession-practice-wrapper" />
+            <StenoInput
+                parentSelector=".lession-practice-wrapper"
+                onKeyDownHook={handleKeyDown}
+                onKeyUpHook={handleKeyUp}
+            />
             <div className="keyboards">
                 <QwertyStenoKeyboad style={{ fontSize: "13px" }} />
                 <StenoKeyboard style={{ fontSize: "20px" }} />

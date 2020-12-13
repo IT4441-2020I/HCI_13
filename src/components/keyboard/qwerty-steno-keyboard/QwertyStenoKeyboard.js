@@ -57,7 +57,6 @@ function setQwertyStenoKeyWrongPressed(keyId, parentSelector = "") {
     const stenoKey = document.querySelector(
         `${parentSelector} .qwerty-steno-keyboard #${keyId}`
     );
-    console.log(stenoKey);
     if (stenoKey !== null && !stenoKey.classList.contains("wrong-pressed")) {
         stenoKey.classList.add("wrong-pressed");
     }
@@ -67,7 +66,6 @@ function setQwertyStenoKeyUnpressed(keyId, parentSelector = "") {
     const stenoKey = document.querySelector(
         `${parentSelector} .qwerty-steno-keyboard #${keyId}`
     );
-    console.log(`${parentSelector} .qwerty-steno-keyboard #${keyId}`);
     if (stenoKey !== null) {
         stenoKey.classList.remove("pressed");
         stenoKey.classList.remove("wrong-pressed");
