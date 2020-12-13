@@ -6,6 +6,9 @@ export default class BaiHoc extends Component {
     render() {
         return (
             <div>
+                <Link to={"/tiendo"} className="nav-link">
+                                    Tiến độ
+                                </Link>
                 <table className="table table-borderless">
                     <tr>
                         <td colspan="3">

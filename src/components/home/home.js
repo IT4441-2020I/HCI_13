@@ -27,64 +27,62 @@ export default class Home extends Component {
                         </Link>
                     </div>
                     <div className="left">
-                        <StenoKeyboard />
+                        <StenoKeyboard style={{fontSize: 20}} />
                     </div>
                 </div>
                 <div className="home2">
-                    <span className="tieude1">Lorem ipsum dolor sit amet</span>
+                    <span className="tieude1">Làm thế nào để thuộc được các chữ cái trên bàn phím steno</span>
                     <br />
                     <span>
-                        Ultrices eget tortor bibendum fringilla a sit. Mauris in
-                        dignissim tristique tellus quis volutpat praesent.
-                        Praesent sed consectetur mauris lacus, tristique integer
-                        vivamus. Curabitur quis sed morbi blandit id. Fermentum
-                        venenatis eget integer consequat. Massa egestas feugiat
-                        quam risus elit id egestas. Lacinia eu scelerisque
-                        placerat amet magna est a. Feugiat aliquet sit egestas
-                        tristique nisl libero tortor. Proin dui faucibus non
-                        mattis curabitur pulvinar sed quis purus. Id cursus
-                        aliquam pretium vivamus enim, et nulla eget. Consequat
-                        dapibus proin ut non mauris arcu. Vitae, ultricies lacus
-                        ante in. Sit ipsum vitae lectus commodo sagittis.
+                        Chào mừng bạn đã đến với game tốc ký tiếng Việt.
+                        Chúng tôi tin rằng việc học gõ tốc ký tiếng Việt
+                        có thể dễ dàng hơn nếu coi đó là một trò chơi.
+                        Game tốc ký hỗ trợ người học cải thiện các kỹ
+                        năng bàn phím, tốc độ gõ và độ chính xác bấm phím.
+                        Các bạn sẽ học cả cách phối hợp tư duy – hành động
+                        theo chu trình thực hiện – đánh giá: kết hợp mắt
+                        với tay, kết hợp trí nhớ và phản xạ cơ tay.
+                        Đây là yếu tố quyết định để dành chiến thắng
+                        trong trò chơi, cũng là để bạn luyện gõ tốc ký thuần thục.
                     </span>
                 </div>
                 <div className="home3">
                     <span className="tieude1">
-                        Quis vitae, sit orci, gravida nisi, scelerisque
+                        Làm thế nào để việc học tốc ký trở nên vui vẻ?
                     </span>
                     <br />
                     <span>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Pellentesque habitant accumsan, risus, morbi massa.
-                        Placerat scelerisque enim, dolor a. Lectus sit faucibus
-                        egestas vestibulum maecenas varius massa. Adipiscing
-                        quam lectus quis hendrerit id id pellentesque lectus eu.
-                        Sit vestibulum viverra metus nibh donec tempus ridiculus
-                        porttitor nam. Purus eu posuere scelerisque in non
-                        sodales id nisl lectus. Mauris lacinia condimentum nam
-                        nunc eget. Euismod purus elit, orci eget vestibulum sit
-                        et, id suscipit. Etiam hendrerit turpis eu auctor
-                        viverra pulvinar tempus ut.
+                        Người chơi sẽ trải qua các thử thách có độ khó
+                        tăng dần và nhận được điểm số, khen thưởng khi
+                        hoàn thành vòng chơi. Một cách tuyệt vời để làm
+                        cho các bài học trên bàn phím trở nên thú vị
+                        và tạo động lực hơn là biến mỗi bài học bàn phím
+                        thành VideoGame WPM bằng cách khuyến khích người
+                        chơi gõ nhanh nhất có thể. Game tốc ký giúp người
+                        chơi thực hành các kỹ năng gõ bàn phím steno của
+                        họ bằng cách thách thức họ luyện tập chăm chỉ hơn
+                        để đạt được từng mục tiêu. Chìa khóa để khuyến khích
+                        người chơi tham gia là đưa ra phản hồi tích cực và
+                        cho họ một vài cơ hội để cố gắng đánh
+                        bại wpm cao nhất của chính họ.
                     </span>
                 </div>
                 <div className="home4">
                     <span className="tieude1">
-                        Consectetur at justo egestas diam mauris
+                        Làm thế nào để thu hút người học gõ tốc ký?
                     </span>
                     <br />
                     <span>
-                        Aliquet volutpat arcu eu tortor, suspendisse dui
-                        feugiat. At cras magna sagittis, ullamcorper. Vel justo
-                        non bibendum tellus id vestibulum faucibus sapien. Nunc
-                        tristique purus nulla elementum. Vitae duis diam
-                        tincidunt at id. Purus malesuada pretium vestibulum nisl
-                        elit nunc velit. Mollis quisque a arcu, nisi non. Morbi
-                        lectus sit egestas sapien. Non amet, pharetra amet arcu,
-                        at. Lectus enim lacus sit scelerisque blandit. Eu ut
-                        tempor pulvinar scelerisque sed mattis ultrices. Ut eget
-                        nisl id id vel ipsum pulvinar congue integer.
-                        Suspendisse tellus imperdiet amet eget viverra nulla
-                        fringilla ultrices.
+                        Trong phạm vi Game tốc ký của chúng tôi,
+                        người chơi được học vị trí đặt ngón tay,
+                        thuộc được các âm cấu tạo nên từ, cách viết.
+                        Ngoài những kỹ năng cốt lõi này, trang web của chúng tôi
+                        cũng chú ý đến việc học các kỹ năng chính tả cần thiết.
+                        Học gõ tốc ký sẽ giảm sự thú vị nếu người chơi chỉ
+                        tự chơi một mình. Vì vậy chúng tôi đã nghĩ:
+                        Tại sao không để người chơi vui vẻ gõ cùng nhau?
+                        Đây là ý tưởng cho sự phát triển của trang web
+                        học gõ tốc ký này.
                     </span>
                 </div>
             </div>

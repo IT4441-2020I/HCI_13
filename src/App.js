@@ -8,6 +8,7 @@ import Login from "./components/Login/login";
 import LuyenGo from "./components/LuyenGo/luyengo";
 import LessionsList from "./components/BaiHoc/LessionsList";
 import Thidau from "./components/thidau/Thidau";
+import TienDo from "./components/TienDo/tiendo";
 
 class App extends Component {
     render() {
@@ -24,6 +25,7 @@ class App extends Component {
                         />
                         <Route path="/login" component={Login} />
                         <Route path="/luyengo" component={LuyenGo} />
+                        <Route path="/tiendo" component={TienDo} />
                         <Route path="/thidau" component={Thidau} />
                     </Switch>
                 </div>

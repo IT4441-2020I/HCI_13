@@ -26,7 +26,7 @@
   padding-right: 1em !important;
 }
 
-.nav-link.active {
+.active {
   color: #884dfb;
   border-bottom: 3px solid #884dfb;
 }

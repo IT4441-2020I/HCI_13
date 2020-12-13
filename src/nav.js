@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { DropdownButton, Dropdown } from "react-bootstrap";
 import "./App.css";
 import { Icon } from "@iconify/react";
 import magnifyIcon from "@iconify/icons-mdi/magnify";
 
-export default class Nav extends Component {
+export default class Nav extends Component { 
     logout() {
         localStorage.removeItem("username");
         window.location.reload();
@@ -18,32 +18,32 @@ export default class Nav extends Component {
                         className="collapse navbar-collapse"
                         id="navbarSupportedContent"
                     >
-                        <Link to={"/"} className="navbar-brand logo">
+                        <Link to={"/"} className="navbar-brand logo" >
                             Gõ Tốc Ký
                         </Link>
                         <ul className="navbar-nav mr-auto">
-                            <li className="nav-item">
-                                <Link
+                            <li className="nav-link">
+                                <NavLink
                                     to={"/baihoc"}
-                                    className="nav-link active"
+                                    activeClassName="active"
                                 >
                                     Bài học
-                                </Link>
+                                </NavLink>
                             </li>
-                            <li className="nav-item">
-                                <Link to={"/luyengo"} className="nav-link">
+                            <li className="nav-link">
+                                <NavLink to={"/luyengo"} activeClassName="active">
                                     Luyện gõ
-                                </Link>
+                                </NavLink>
                             </li>
-                            <li className="nav-item">
-                                <Link to={"/tiendo"} className="nav-link">
+                            <li className="nav-link">
+                                <NavLink to={"/tiendo"} activeClassName="active">
                                     Tiến độ
-                                </Link>
+                                </NavLink>
                             </li>
-                            <li className="nav-item">
-                                <Link to={"/thidau"} className="nav-link">
+                            <li className="nav-link">
+                                <NavLink to={"/thidau"} activeClassName="active">
                                     Thi đấu
-                                </Link>
+                                </NavLink>
                             </li>
                         </ul>
                         <form className="form-inline search-form">
@@ -52,7 +52,7 @@ export default class Nav extends Component {
                                 type="text"
                                 placeholder="Search"
                             />
-                            <button type="submit">
+                            <button >
                                 <Icon icon={magnifyIcon} />
                             </button>
                         </form>
@@ -62,12 +62,12 @@ export default class Nav extends Component {
                                 title={localStorage.getItem("username")}
                                 style={{ marginLeft: 8 }}
                             >
-                                <Dropdown.Item
+                                <Dropdown.link
                                     href="#/action-1"
                                     onClick={this.logout}
                                 >
                                     Đăng xuất
-                                </Dropdown.Item>
+                                </Dropdown.link>
                             </DropdownButton>
                         ) : (
                             <Link to={"/login"} className="nav-link">

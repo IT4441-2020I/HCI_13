@@ -13,7 +13,7 @@ import {
 } from "./qwerty-steno-keyboard/QwertyStenoKeyboard";
 
 function StenoInput(props) {
-    let { parentSelector, onKeyDownHook, onKeyUpHook } = props;
+    let { parentSelector, onKeyDownHook, onKeyUpHook, onChangeHook } = props;
     if (parentSelector === undefined) {
         parentSelector = "";
     }
@@ -38,8 +38,14 @@ function StenoInput(props) {
         }
     };
 
+    const handleChange = (event) => {
+        if (typeof onChangeHook === "function") {
+            onChangeHook(event);
+        }
+    }
+
     return (
-        <input type="text" onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} />
+        <input type="text" onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} onChange={handleChange} />
     );
 }
 
