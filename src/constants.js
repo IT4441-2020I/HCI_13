@@ -263,3 +263,57 @@ export const WORDS = [
     "lưu",
     "thông",
 ];
+
+export const TOPICS = [
+    {
+        title: "Giới thiệu bàn phím gõ tốc ký",
+        lessions: [
+            "Bàn phím gõ tốc ký",
+            "Trật tự bàn phím gõ tốc ký",
+            "Cách đặt ngón tay trên bàn phím gõ tốc ký",
+            "Nguyên tắc gõ tốc ký",
+        ],
+        numberOfCompletedLessions: 3,
+    },
+    {
+        title: "Quy tắc gõ âm đầu",
+        lessions: [
+            "Những âm có cùng cách phát âm với phím tốc ký",
+            "Những âm có cách phát âm giống nhau hoặc gần nhau",
+            "Những âm có dạng chữ viết gần giống nhau",
+            "Nhóm âm ngoại lệ",
+        ],
+        numberOfCompletedLessions: 3,
+    },
+    {
+        title: "Quy tắc gõ âm chính không có âm đệm",
+        lessions: ["Nhóm âm ngắn", "Nhóm âm ngoại lệ"],
+        numberOfCompletedLessions: 2,
+    },
+    {
+        title: "Quy tắc gõ âm chính có âm đệm",
+        lessions: [
+            "Những âm có cùng dạng chữ với phím tốc ký ",
+            "Nhóm âm ngoại lệ",
+        ],
+        numberOfCompletedLessions: 1,
+    },
+    {
+        title: "Quy tắc gõ dấu thanh",
+        lessions: [
+            "Dấu thanh đường nét thẳng",
+            "Dấu thanh đường nét gãy đổi hướng",
+        ],
+        numberOfCompletedLessions: 0,
+    },
+    {
+        title: "Quy tắc gõ âm cuối",
+        lessions: [
+            "Những âm có cùng dạng chữ với phím tốc ký",
+            "Những âm có dạng chữ viết gần giống nhau ",
+            "Những âm có cách phát âm gần nhau ",
+            "Nhóm âm ngoại lệ",
+        ],
+        numberOfCompletedLessions: 0,
+    },
+];

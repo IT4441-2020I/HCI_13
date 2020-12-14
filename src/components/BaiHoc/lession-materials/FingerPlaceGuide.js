@@ -2,6 +2,10 @@ import StenoKeyboard, {
     setStenoKeyPressed,
     setStenoKeyUnpressed,
 } from "../../keyboard/steno-keyboard/StenoKeyboard";
+import QwertyStenoKeyboad, {
+    setQwertyStenoKeyPressed,
+    setQwertyStenoKeyUnpressed,
+} from "../../keyboard/qwerty-steno-keyboard/QwertyStenoKeyboard";
 import Hands, {
     setFingerPressed,
     setFingerUnpressed,
@@ -18,6 +22,7 @@ function FingerPlaceGuide() {
 
     useEffect(() => {
         setStenoKeyPressed("key81");
+        setQwertyStenoKeyPressed("key81");
         setFingerPressed("finger-0");
     }, []);
 
@@ -30,6 +35,7 @@ function FingerPlaceGuide() {
 
         // Remove previous selection
         setStenoKeyUnpressed(previousStenoKeyId);
+        setQwertyStenoKeyUnpressed(previousStenoKeyId);
         setFingerUnpressed(previousFingerId);
         const previousButton = document.querySelector(
             `.letters button#${previousButtonId}`
@@ -40,6 +46,7 @@ function FingerPlaceGuide() {
         // Update new selection
         const stenoKeyId = event.target.attributes["steno-key-id"].value;
         setStenoKeyPressed(stenoKeyId);
+        setQwertyStenoKeyPressed(stenoKeyId);
         const fingerId = event.target.attributes["finger-id"].value;
         setFingerPressed(fingerId);
         event.target.classList.remove("button-secondary");
@@ -113,7 +120,8 @@ function FingerPlaceGuide() {
                 </button>
             </div>
             <div className="keyboards">
-                <StenoKeyboard />
+                <QwertyStenoKeyboad style={{ fontSize: 12 }} />
+                <StenoKeyboard style={{ fontSize: 18 }} />
             </div>
             <Hands />
         </section>
