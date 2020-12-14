@@ -9,6 +9,7 @@ import LuyenGo from "./components/LuyenGo/luyengo";
 import LessionsList from "./components/BaiHoc/LessionsList";
 import Thidau from "./components/thidau/Thidau";
 import TienDo from "./components/TienDo/tiendo";
+import Footer from "./footer";
 
 class App extends Component {
     render() {
@@ -29,6 +30,7 @@ class App extends Component {
                         <Route path="/thidau" component={Thidau} />
                     </Switch>
                 </div>
+                <Footer/>
             </Router>
         );
     }
