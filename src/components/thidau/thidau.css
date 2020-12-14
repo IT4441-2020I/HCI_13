@@ -52,11 +52,11 @@
   border-radius: 2em;
 }
 
-.main-player img {
+.player .main-player img {
   width: 6rem;
 }
 
-.main-player .player-name {
+.player.main-player .player-name {
   font-size: 1.5rem;
   background-color: cyan;
 }
@@ -93,4 +93,97 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.result-overlay {
+  position: fixed;
+  left: 0;
+  top: 5rem;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 25;
+}
+
+.result-container {
+  position: fixed;
+  top: 7rem;
+  left: 16.6665%;
+  width: 66.6667%;
+  height: calc(100vh - 9rem);
+  background-color: white;
+  padding: 2rem;
+  animation: slideUpFromDown 300ms linear;
+  overflow: auto;
+  border-radius: 1em;
+  z-index: 30;
+}
+
+#my-result {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem auto;
+}
+
+#my-rank,
+#my-time,
+#my-speed,
+#my-accuracy {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-container h2 {
+  padding: 0 4rem;
+  font-weight: bold;
+}
+
+.result-container button.restart-game {
+  position: absolute;
+  right: 6rem;
+  top: 2rem;
+  font-size: 24px;
+}
+
+.result-container button.restart-game:hover {
+  color: #884dfb;
+}
+
+.result-container button.restart-game svg {
+  font-size: 36px;
+}
+
+.result-container table {
+  text-align: center;
+  margin: auto;
+}
+
+.result-container th {
+  background-color: #884dfb;
+  color: white;
+}
+
+.result-container table .main-player {
+  font-weight: bold;
+  background-color: #c4c4c4;
+}
+
+.result-container table .player-name {
+  text-align: left;
+}
+
+.result-container th,
+.result-container td {
+  padding: 0.5rem 1rem;
+}
+
+@keyframes slideUpFromDown {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

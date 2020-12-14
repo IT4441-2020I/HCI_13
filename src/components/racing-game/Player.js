@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 
 export default function Player(props) {
     const playerRef = useRef();
-    const { isMainPlayer, playerName } = props;
+    const { isMainPlayer, playerName, gameEnded } = props;
 
     useEffect(() => {
         if (playerRef.current !== null) {
@@ -19,11 +19,11 @@ export default function Player(props) {
             movePlayer(offset);
         };
 
-        if (!isMainPlayer) {
+        if (!isMainPlayer && !gameEnded) {
             const loopId = setInterval(gameLoop, 5000);
             return () => clearInterval(loopId);
         }
-    });
+    }, [isMainPlayer, gameEnded]);
 
     return (
         <div
