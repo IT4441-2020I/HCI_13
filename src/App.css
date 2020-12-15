@@ -31,6 +31,7 @@ table.table-borderless {
 
 .container {
   margin-top: 7rem;
+  overflow-y: auto;
 }
 
 .logo {

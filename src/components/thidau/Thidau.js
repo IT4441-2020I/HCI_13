@@ -1,9 +1,8 @@
 import "./thidau.css";
 import { useEffect, useRef, useState } from "react";
-import Street from "../racing-game/Street";
-import Player from "../racing-game/Player";
 import TypingExercise from "./TypingExercise";
 import Result from "./Result";
+import RacingGame from "../racing-game/RacingGame";
 
 function Thidau() {
     const minuteRef = useRef();
@@ -12,14 +11,12 @@ function Thidau() {
     const [gameEnded, setGameEnded] = useState(false);
 
     useEffect(() => {
-        if (!gameStarted) {
-            const timeOutId = setTimeout(() => {
-                setGameStarted(true);
-            }, 3000);
-            return () => {
-                clearTimeout(timeOutId);
-            };
-        }
+        const timeOutId = setTimeout(() => {
+            setGameStarted(true);
+        }, 5000);
+        return () => {
+            clearTimeout(timeOutId);
+        };
     }, []);
 
     useEffect(() => {
@@ -51,23 +48,7 @@ function Thidau() {
 
     return (
         <>
-            <div className="racing-game-container shadow">
-                <Street />
-                <div className="players-wrapper">
-                    <Player playerName={"Love Hust"} gameEnded={gameEnded} />
-                    <Player playerName={"Niar"} gameEnded={gameEnded} />
-                    <Player
-                        isMainPlayer={true}
-                        playerName={"You"}
-                        gameEnded={gameEnded}
-                    />
-                    <Player playerName={"Nguyen Van"} gameEnded={gameEnded} />
-                    <Player
-                        playerName={"Two Steps From Hell"}
-                        gameEnded={gameEnded}
-                    />
-                </div>
-            </div>
+            <RacingGame gameStarted={gameStarted} gameEnded={gameEnded} />
             <TypingExercise
                 gameStarted={gameStarted}
                 setGameEnded={setGameEnded}

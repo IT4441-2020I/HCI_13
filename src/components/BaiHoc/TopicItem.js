@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ProgressBar } from "react-bootstrap";
 
 function TopicItem(props) {
     const { title, lessions, numberOfCompletedLessions } = props.topic;
@@ -23,14 +24,7 @@ function TopicItem(props) {
                             Hoàn thành: {numberOfCompletedLessions}/
                             {lessions.length}
                         </p>
-                        <div className="progress">
-                            <div
-                                className="progress-bar active"
-                                style={{
-                                    width: `${progress}%`,
-                                }}
-                            />
-                        </div>
+                        <ProgressBar now={progress} />
                     </div>
                 </div>
             </Link>
