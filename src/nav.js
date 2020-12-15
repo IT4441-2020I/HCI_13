@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { DropdownButton, Dropdown } from "react-bootstrap";
 import "./App.css";
-import { Icon } from "@iconify/react";
-import magnifyIcon from "@iconify/icons-mdi/magnify";
-import bxHome from "@iconify/icons-bx/bx-home";
+import { MdHome, MdSearch } from "react-icons/md";
 
 export default class Nav extends Component {
     logout() {
@@ -25,7 +22,7 @@ export default class Nav extends Component {
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-link home">
                                 <NavLink exact to="/" activeClassName="active">
-                                    <Icon icon={bxHome} />
+                                    <MdHome size="1.5em" />
                                 </NavLink>
                             </li>
                             <li className="nav-link">
@@ -56,7 +53,7 @@ export default class Nav extends Component {
                                 placeholder="Search"
                             />
                             <button>
-                                <Icon icon={magnifyIcon} />
+                                <MdSearch />
                             </button>
                         </form>
                         {/* {localStorage.getItem("username") ? ( */}

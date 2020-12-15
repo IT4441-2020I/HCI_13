@@ -1,10 +1,8 @@
-import { Icon } from "@iconify/react";
-import closeIcon from "@iconify/icons-mdi/close";
-import bxRightArrowAlt from "@iconify/icons-bx/bx-right-arrow-alt";
 import StenoRulesTable from "./lession-materials/StenoRulesTable";
 import FingerPlaceGuide from "./lession-materials/FingerPlaceGuide";
 import { useState, useRef } from "react";
 import LessionPracticeContent from "./LessionPracticeContent";
+import { MdClose, MdArrowForward } from "react-icons/md";
 
 function LessionContent(props) {
     const lessionContentWrapperRef = useRef();
@@ -29,7 +27,7 @@ function LessionContent(props) {
     return (
         <div className="lession-wrapper">
             <div className="close-icon" onClick={hideLessionContent}>
-                <Icon icon={closeIcon} />
+                <MdClose />
             </div>
             <div
                 ref={lessionContentWrapperRef}
@@ -48,7 +46,7 @@ function LessionContent(props) {
                     onClick={showLessionPracticeContent}
                 >
                     Luyện tập
-                    <Icon icon={bxRightArrowAlt} />
+                    <MdArrowForward size="1.5em" />
                 </button>
             </div>
             {lessionPracticeContent !== null && (

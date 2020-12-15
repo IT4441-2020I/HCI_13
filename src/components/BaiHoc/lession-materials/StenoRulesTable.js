@@ -1,9 +1,10 @@
 import "./steno_rules_table.css";
+import { Table } from "react-bootstrap";
 
 function StenoRulesTable() {
     return (
         <section className="rules-section">
-            <table className="rules-table">
+            <Table className="rules-table" bordered striped size="sm">
                 <caption>Bảng quy tắc</caption>
                 <thead>
                     <tr>
@@ -37,7 +38,7 @@ function StenoRulesTable() {
                         <td>r</td>
                     </tr>
                 </tbody>
-            </table>
+            </Table>
         </section>
     );
 }

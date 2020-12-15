@@ -14,12 +14,6 @@
   text-align: center;
 }
 
-.rules-table,
-.rules-table th,
-.rules-table td {
-  border: 1px solid black;
-}
-
 .rules-table th {
   background-color: #884dfb;
   color: white;

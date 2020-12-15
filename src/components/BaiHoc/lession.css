@@ -105,17 +105,8 @@
   color: #884dfb;
 }
 
-#hide-practice-button svg,
-#practice-button svg {
-  font-size: 24px;
-}
-
 #next-key {
   font-size: 14px;
-}
-
-#next-key svg {
-  font-size: 20px;
 }
 
 @keyframes slideUpFromDown {

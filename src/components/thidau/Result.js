@@ -1,5 +1,5 @@
-import { Icon } from "@iconify/react";
-import refreshIcon from "@iconify/icons-foundation/refresh";
+import { MdRefresh } from "react-icons/md";
+import { Table } from "react-bootstrap";
 
 function Result(props) {
     const { restartGame } = props;
@@ -9,7 +9,7 @@ function Result(props) {
             <div className="result-container">
                 <h2>Kết quả đua</h2>
                 <button className="restart-game" onClick={restartGame}>
-                    <Icon icon={refreshIcon} />
+                    <MdRefresh size="2em" />
                     Đua tiếp
                 </button>
                 <div id="my-result">
@@ -42,7 +42,7 @@ function Result(props) {
                         </span>
                     </div>
                 </div>
-                <table>
+                <Table bordered>
                     <thead>
                         <tr>
                             <th>Xếp hạng</th>
@@ -89,7 +89,7 @@ function Result(props) {
                             <td>100</td>
                         </tr>
                     </tbody>
-                </table>
+                </Table>
             </div>
         </>
     );

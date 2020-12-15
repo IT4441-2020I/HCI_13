@@ -13,12 +13,6 @@ h6 {
   font-family: "Source Sans Pro";
 }
 
-table,
-th,
-td {
-  border: 1px solid black;
-}
-
 table.table-borderless {
   border: none;
 }
@@ -48,7 +42,6 @@ table.table-borderless {
 }
 
 .nav-link.home {
-  font-size: 24px;
   padding: 0 !important;
 }
 
@@ -61,6 +54,11 @@ table.table-borderless {
   color: #884dfb;
   border-bottom: 3px solid #884dfb;
   margin-bottom: -3px;
+}
+
+.nav-link.home a:hover,
+.nav-link.home .active {
+  margin-bottom: 0 !important;
 }
 
 .nav-link .active {
@@ -130,4 +128,8 @@ a:hover {
 .qwerty-steno-key.wrong-pressed {
   background-color: red !important;
   color: white;
+}
+
+footer {
+  padding: 2rem 8.3333%;
 }

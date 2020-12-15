@@ -9,12 +9,21 @@
   text-align: justify;
 }
 
+.exercise-container .exercise {
+  font-size: 24px;
+  text-align: justify;
+}
+
 .exercise-container .exercise .true {
   color: #00ff04;
 }
 
 .exercise-container .exercise .false {
   color: red;
+}
+
+.exercise-container .exercise .current {
+  background-color: #e0e0e0;
 }
 
 .exercise-container .exercise-input {
@@ -92,10 +101,6 @@
   color: #884dfb;
 }
 
-.result-container button.restart-game svg {
-  font-size: 36px;
-}
-
 .result-container table {
   text-align: center;
   margin: auto;
@@ -113,11 +118,6 @@
 
 .result-container table .player-name {
   text-align: left;
-}
-
-.result-container th,
-.result-container td {
-  padding: 0.5rem 1rem;
 }
 
 @keyframes slideUpFromDown {

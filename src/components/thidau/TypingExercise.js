@@ -3,9 +3,17 @@ import { WORDS } from "../../constants";
 
 function TypingExercise(props) {
     const { gameStarted, setGameEnded } = props;
-    const [isCorrect, setIsCorrect] = useState(new Array(WORDS.length));
+    const [wordsStatus, setWordsStatus] = useState(new Array(WORDS.length));
     const currentWordIndex = useRef(0);
     const inputRef = useRef();
+
+    const updateWordStatus = (status, index) => {
+        setWordsStatus((wordsStatus) => {
+            const newWordsStatus = [...wordsStatus];
+            newWordsStatus[index] = status;
+            return newWordsStatus;
+        });
+    };
 
     const handleChange = (event) => {
         const { value } = event.target;
@@ -13,23 +21,17 @@ function TypingExercise(props) {
             const index = currentWordIndex.current;
             if (index < WORDS.length) {
                 if (value.trim() === WORDS[index]) {
-                    setIsCorrect((isCorrect) => {
-                        const newIsCorrect = [...isCorrect];
-                        newIsCorrect[index] = "true";
-                        return newIsCorrect;
-                    });
+                    updateWordStatus("true", index);
                 } else {
-                    setIsCorrect((isCorrect) => {
-                        const newIsCorrect = [...isCorrect];
-                        newIsCorrect[index] = "false";
-                        return newIsCorrect;
-                    });
+                    updateWordStatus("false", index);
                 }
-                ++currentWordIndex.current;
             }
 
-            if (currentWordIndex.current === WORDS.length) {
+            if (currentWordIndex.current === WORDS.length - 1) {
                 setGameEnded(true);
+            } else {
+                ++currentWordIndex.current;
+                updateWordStatus("current", currentWordIndex.current);
             }
             event.target.value = "";
         }
@@ -39,6 +41,7 @@ function TypingExercise(props) {
         if (inputRef.current !== null && gameStarted) {
             inputRef.current.disabled = false;
             inputRef.current.focus();
+            updateWordStatus("current", 0);
         }
     }, [gameStarted]);
 
@@ -48,8 +51,8 @@ function TypingExercise(props) {
                 {WORDS.map((word, index) => (
                     <span
                         className={
-                            isCorrect[index] !== undefined
-                                ? isCorrect[index]
+                            wordsStatus[index] !== undefined
+                                ? wordsStatus[index]
                                 : ""
                         }
                         key={index}
