@@ -4,8 +4,9 @@ import { DropdownButton, Dropdown } from "react-bootstrap";
 import "./App.css";
 import { Icon } from "@iconify/react";
 import magnifyIcon from "@iconify/icons-mdi/magnify";
+import bxHome from "@iconify/icons-bx/bx-home";
 
-export default class Nav extends Component { 
+export default class Nav extends Component {
     logout() {
         localStorage.removeItem("username");
         window.location.reload();
@@ -18,30 +19,32 @@ export default class Nav extends Component {
                         className="collapse navbar-collapse"
                         id="navbarSupportedContent"
                     >
-                        <Link to={"/"} className="navbar-brand logo" >
+                        <Link to={"/"} className="navbar-brand logo">
                             Gõ Tốc Ký
                         </Link>
                         <ul className="navbar-nav mr-auto">
+                            <li className="nav-link home">
+                                <NavLink exact to="/" activeClassName="active">
+                                    <Icon icon={bxHome} />
+                                </NavLink>
+                            </li>
                             <li className="nav-link">
-                                <NavLink
-                                    to={"/baihoc"}
-                                    activeClassName="active"
-                                >
+                                <NavLink to="/baihoc" activeClassName="active">
                                     Bài học
                                 </NavLink>
                             </li>
                             <li className="nav-link">
-                                <NavLink to={"/luyengo"} activeClassName="active">
+                                <NavLink to="/luyengo" activeClassName="active">
                                     Luyện gõ
                                 </NavLink>
                             </li>
                             <li className="nav-link">
-                                <NavLink to={"/tiendo"} activeClassName="active">
+                                <NavLink to="/tiendo" activeClassName="active">
                                     Tiến độ
                                 </NavLink>
                             </li>
                             <li className="nav-link">
-                                <NavLink to={"/thidau"} activeClassName="active">
+                                <NavLink to="/thidau" activeClassName="active">
                                     Thi đấu
                                 </NavLink>
                             </li>
@@ -52,28 +55,28 @@ export default class Nav extends Component {
                                 type="text"
                                 placeholder="Search"
                             />
-                            <button >
+                            <button>
                                 <Icon icon={magnifyIcon} />
                             </button>
                         </form>
-                        {localStorage.getItem("username") ? (
-                            <DropdownButton
-                                id="dropdown-basic-button"
-                                title={localStorage.getItem("username")}
-                                style={{ marginLeft: 8 }}
-                            >
-                                <Dropdown.link
-                                    href="#/action-1"
-                                    onClick={this.logout}
-                                >
-                                    Đăng xuất
-                                </Dropdown.link>
-                            </DropdownButton>
-                        ) : (
-                            <Link to={"/login"} className="nav-link">
-                                Đăng nhập | Đăng ký
-                            </Link>
-                        )}
+                        {/* {localStorage.getItem("username") ? ( */}
+                        {/*     <DropdownButton */}
+                        {/*         id="dropdown-basic-button" */}
+                        {/*         title={localStorage.getItem("username")} */}
+                        {/*         style={{ marginLeft: 8 }} */}
+                        {/*     > */}
+                        {/*         <Dropdown.link */}
+                        {/*             href="#/action-1" */}
+                        {/*             onClick={this.logout} */}
+                        {/*         > */}
+                        {/*             Đăng xuất */}
+                        {/*         </Dropdown.link> */}
+                        {/*     </DropdownButton> */}
+                        {/* ) : ( */}
+                        {/*     <Link to={"/login"} className="nav-link"> */}
+                        {/*         Đăng nhập | Đăng ký */}
+                        {/*     </Link> */}
+                        {/* )} */}
                     </div>
                 </nav>
             </header>

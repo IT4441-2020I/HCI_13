@@ -74,6 +74,7 @@ function LessionsList() {
             line1.remove();
             line2.remove();
             line3.remove();
+            document.body.style.overflow = "auto";
         };
     }, []);
 

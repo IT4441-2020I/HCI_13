@@ -11,12 +11,20 @@ import {
     setQwertyStenoKeyWrongPressed,
     setQwertyStenoKeyUnpressed,
 } from "./qwerty-steno-keyboard/QwertyStenoKeyboard";
+import { useRef, useEffect } from "react";
 
 function StenoInput(props) {
+    const inputRef = useRef();
     let { parentSelector, onKeyDownHook, onKeyUpHook, onChangeHook } = props;
     if (parentSelector === undefined) {
         parentSelector = "";
     }
+
+    useEffect(() => {
+        if (inputRef.current !== null) {
+            inputRef.current.focus();
+        }
+    });
 
     const handleKeyDown = (event) => {
         const { keyCode } = event;
@@ -42,10 +50,17 @@ function StenoInput(props) {
         if (typeof onChangeHook === "function") {
             onChangeHook(event);
         }
-    }
+    };
 
     return (
-        <input type="text" onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} onChange={handleChange} />
+        <input
+            ref={inputRef}
+            type="text"
+            onKeyDown={handleKeyDown}
+            onKeyUp={handleKeyUp}
+            onChange={handleChange}
+            style={{ width: "100%" }}
+        />
     );
 }
 

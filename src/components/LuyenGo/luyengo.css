@@ -1,48 +1,43 @@
-.tabbar{
-    border:#884DFB solid 1px;
-    text-align: center;
-    width: 150px;
-    height: 40px;
-    line-height: 40px;
+.nav-item.nav-link.active {
+  background-color: #884dfb;
+  color: beige;
+  font-weight: bold;
 }
 .activeLG {
-    background-color: #884DFB;
-    color: beige;
+  background-color: #884dfb;
+  color: beige;
 }
-.center{
-    display: flex;
-    flex-direction: row;
+.center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5rem 2.5rem;
+  justify-content: space-between;
 }
-.leftLG{
-    width: 60%;
-    height: 70%;
-    padding-left: 80px;
-    padding-top: 80px;
+.leftLG {
+  width: 60%;
+  height: 70%;
 }
-.tabbar2{
-    border:#884DFB solid 1px;
-    text-align: center;
-    width: 150px;
-    height: 28px;
-    line-height: 28px;
+.tabbar2 {
+  border: #884dfb solid 1px;
+  text-align: center;
+  width: 150px;
+  height: 28px;
+  line-height: 28px;
 }
-.box{
-    width: 610px;
-    height: 200px;
-    border:#a59a9a solid 1px;
-    padding: 40px;
+.box {
+  width: 610px;
+  height: 200px;
+  border: #a59a9a solid 1px;
+  padding: 40px;
 }
-.input{
-    border:#000000 solid 1px;
+.rightLG {
+  padding-top: 28px;
+  text-align: center;
 }
-.rightLG{
-    padding: 108px;
-    text-align: center;
-    
-}
-.time{
-    font-size: 40px;
-    width: 300px;
-    height: 200px;
-    border:#a59a9a solid 1px;
+.time {
+  font-size: 40px;
+  width: 300px;
+  height: 200px;
+  border: #a59a9a solid 1px;
 }
