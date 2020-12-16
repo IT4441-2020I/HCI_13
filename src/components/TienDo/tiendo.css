@@ -10,6 +10,7 @@
 }
 
 .bio {
+  position: relative;
   width: 35%;
   padding: 2rem;
 }
@@ -27,6 +28,25 @@
 .bio ul li {
   list-style: none;
   padding-top: 0.5rem;
+}
+
+.bio ul li span {
+  margin-left: 1rem;
+}
+
+.bio #ranking #help-icon:hover {
+  cursor: pointer;
+}
+
+.bio .ranking-help {
+  position: absolute;
+  left: 17rem;
+  top: 15rem;
+  background-color: white;
+}
+
+.bio .ranking-help img {
+  width: 120px;
 }
 
 .lessions-statistic {

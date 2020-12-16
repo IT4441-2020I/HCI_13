@@ -96,6 +96,10 @@ a:hover {
   text-decoration: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .button-primary {
   background-color: #884dfb;
   color: white;
