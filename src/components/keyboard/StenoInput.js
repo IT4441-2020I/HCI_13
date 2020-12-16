@@ -15,9 +15,19 @@ import { useRef, useEffect } from "react";
 
 function StenoInput(props) {
     const inputRef = useRef();
-    let { parentSelector, onKeyDownHook, onKeyUpHook, onChangeHook } = props;
+    let {
+        parentSelector,
+        onKeyDownHook,
+        onKeyUpHook,
+        onChangeHook,
+        type,
+    } = props;
     if (parentSelector === undefined) {
         parentSelector = "";
+    }
+
+    if (type === undefined) {
+        type = "input";
     }
 
     useEffect(() => {
@@ -53,15 +63,26 @@ function StenoInput(props) {
     };
 
     return (
-        <input
-            ref={inputRef}
-            type="text"
-            onKeyDown={handleKeyDown}
-            onKeyUp={handleKeyUp}
-            onChange={handleChange}
-            style={{ width: "100%", fontSize: "1.5rem" }}
-            
-        />
+        <>
+            {type === "input" ? (
+                <input
+                    ref={inputRef}
+                    type="text"
+                    onKeyDown={handleKeyDown}
+                    onKeyUp={handleKeyUp}
+                    onChange={handleChange}
+                    style={{ width: "100%", fontSize: "1.5rem" }}
+                />
+            ) : (
+                <textarea
+                    ref={inputRef}
+                    onKeyDown={handleKeyDown}
+                    onKeyUp={handleKeyUp}
+                    onChange={handleChange}
+                    style={{ width: "100%", fontSize: "1.5rem" }}
+                />
+            )}
+        </>
     );
 }
 

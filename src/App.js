@@ -9,6 +9,7 @@ import LuyenGo from "./components/LuyenGo/luyengo";
 import LessionsList from "./components/BaiHoc/LessionsList";
 import Thidau from "./components/thidau/Thidau";
 import TienDo from "./components/TienDo/tiendo";
+import Soanthao from "./components/soanthao/Soanthao";
 import Footer from "./footer";
 
 class App extends Component {
@@ -28,9 +29,10 @@ class App extends Component {
                         <Route path="/luyengo" component={LuyenGo} />
                         <Route path="/tiendo" component={TienDo} />
                         <Route path="/thidau" component={Thidau} />
+                        <Route path="/soanthao" component={Soanthao} />
                     </Switch>
                 </div>
-                <Footer/>
+                <Footer />
             </Router>
         );
     }

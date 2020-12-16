@@ -45,6 +45,14 @@ export default class Nav extends Component {
                                     Thi đấu
                                 </NavLink>
                             </li>
+                            <li className="nav-link">
+                                <NavLink
+                                    to="/soanthao"
+                                    activeClassName="active"
+                                >
+                                    Soạn thảo
+                                </NavLink>
+                            </li>
                         </ul>
                         <form className="form-inline search-form">
                             <input

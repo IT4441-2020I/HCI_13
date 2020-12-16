@@ -1,0 +1,20 @@
+.soanthao .input-area {
+  position: relative;
+}
+
+.soanthao .input-area svg {
+  position: absolute;
+  top: 0.25em;
+  right: 0;
+}
+
+.soanthao .input-area svg:hover {
+  cursor: pointer;
+}
+
+.soanthao textarea {
+  height: 15rem;
+  margin-bottom: 3rem;
+  padding-right: 3rem;
+  text-align: justify;
+}
