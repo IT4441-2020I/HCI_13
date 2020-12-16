@@ -45,6 +45,7 @@
   justify-content: center;
 }
 
+.finding-players-overlay,
 .result-overlay {
   position: fixed;
   left: 0;
@@ -55,6 +56,7 @@
   z-index: 25;
 }
 
+.finding-players-container,
 .result-container {
   position: fixed;
   top: 7rem;
@@ -69,6 +71,37 @@
   z-index: 30;
 }
 
+.finding-players-container h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.finding-players-container ul {
+  margin-top: 5rem;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.finding-players-container ul li {
+  list-style: none;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.finding-players-container li img {
+  margin-bottom: 0.5rem;
+  width: 100px;
+}
+
+.finding-players-container .pending-player#main-player button {
+  margin-top: 1rem;
+  border-radius: 2em;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
 #my-result {
   display: flex;
   flex-direction: row;

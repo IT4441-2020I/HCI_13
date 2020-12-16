@@ -58,7 +58,7 @@ table.table-borderless {
 
 .nav-link.home a:hover,
 .nav-link.home .active {
-  margin-bottom: 0 !important;
+  margin-bottom: 4px;
 }
 
 .nav-link .active {

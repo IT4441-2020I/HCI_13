@@ -3,21 +3,35 @@ import { useEffect, useRef, useState } from "react";
 import TypingExercise from "./TypingExercise";
 import Result from "./Result";
 import RacingGame from "../racing-game/RacingGame";
+import FindingPlayers from "./FindingPlayers";
 
 function Thidau() {
     const minuteRef = useRef();
     const secondRef = useRef();
+    const [findingPlayers, setFindingPlayers] = useState(true);
     const [gameStarted, setGameStarted] = useState(false);
     const [gameEnded, setGameEnded] = useState(false);
 
+    // useEffect(() => {
+    //     const timeOutId = setTimeout(() => {
+    //         setFindingPlayers(false);
+    //     }, 5000);
+    //
+    //     return () => {
+    //         clearTimeout(timeOutId);
+    //     };
+    // }, []);
+
     useEffect(() => {
-        const timeOutId = setTimeout(() => {
-            setGameStarted(true);
-        }, 5000);
-        return () => {
-            clearTimeout(timeOutId);
-        };
-    }, []);
+        if (!findingPlayers) {
+            const timeOutId = setTimeout(() => {
+                setGameStarted(true);
+            }, 5000);
+            return () => {
+                clearTimeout(timeOutId);
+            };
+        }
+    }, [findingPlayers]);
 
     useEffect(() => {
         if (gameStarted && !gameEnded) {
@@ -48,21 +62,30 @@ function Thidau() {
 
     return (
         <>
-            <RacingGame gameStarted={gameStarted} gameEnded={gameEnded} />
-            <TypingExercise
-                gameStarted={gameStarted}
-                setGameEnded={setGameEnded}
-            />
-            <div className="timer shadow">
-                <span ref={minuteRef} className="minute">
-                    0
-                </span>
-                <span>:</span>
-                <span ref={secondRef} className="second">
-                    00
-                </span>
-            </div>
-            {gameEnded && <Result restartGame={restartGame} />}
+            {findingPlayers ? (
+                <FindingPlayers setFindingPlayers={setFindingPlayers} />
+            ) : (
+                <>
+                    <RacingGame
+                        gameStarted={gameStarted}
+                        gameEnded={gameEnded}
+                    />{" "}
+                    <TypingExercise
+                        gameStarted={gameStarted}
+                        setGameEnded={setGameEnded}
+                    />
+                    <div className="timer shadow">
+                        <span ref={minuteRef} className="minute">
+                            0
+                        </span>
+                        <span>:</span>
+                        <span ref={secondRef} className="second">
+                            00
+                        </span>
+                    </div>
+                    {gameEnded && <Result restartGame={restartGame} />}
+                </>
+            )}
         </>
     );
 }
