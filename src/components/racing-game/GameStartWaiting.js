@@ -8,7 +8,7 @@ function GameStartWating() {
     }, []);
     return (
         <div className="waiting">
-            <ProgressBar striped animated now={progress} />
+            <ProgressBar striped animated now={progress} label="Bắt đầu" />
         </div>
     );
 }
