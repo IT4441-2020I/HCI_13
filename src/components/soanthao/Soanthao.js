@@ -22,8 +22,8 @@ function Soanthao() {
                 <MdContentCopy size="2.5em" onClick={copyToClipboard} />
             </div>
             <div className="keyboards">
-                <QwertyStenoKeyboard style={{ fontSize: 16 }} />
-                <StenoKeyboard style={{ fontSize: 20 }} />
+                <QwertyStenoKeyboard style={{ fontSize: 14 }} />
+                <StenoKeyboard style={{ fontSize: 18 }} />
             </div>
         </div>
     );

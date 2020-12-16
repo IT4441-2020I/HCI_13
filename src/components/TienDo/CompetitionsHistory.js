@@ -24,7 +24,7 @@ function CompetitionsHistory() {
                             15:31:03
                         </td>
                         <td>3</td>
-                        <td>2:53</td>
+                        <td>2:00</td>
                         <td>87 WPM</td>
                         <td>87 %</td>
                     </tr>
@@ -48,7 +48,7 @@ function CompetitionsHistory() {
                             19:21:07
                         </td>
                         <td>4</td>
-                        <td>2:53</td>
+                        <td>2:00</td>
                         <td>87 WPM</td>
                         <td>87 %</td>
                     </tr>
@@ -60,7 +60,7 @@ function CompetitionsHistory() {
                             20:31:03
                         </td>
                         <td>5</td>
-                        <td>2:53</td>
+                        <td>1:53</td>
                         <td>87 WPM</td>
                         <td>92 %</td>
                     </tr>
@@ -72,7 +72,7 @@ function CompetitionsHistory() {
                             20:25:29
                         </td>
                         <td>3</td>
-                        <td>2:32</td>
+                        <td>2:00</td>
                         <td>97 WPM</td>
                         <td>83 %</td>
                     </tr>

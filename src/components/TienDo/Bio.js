@@ -32,7 +32,7 @@ function Bio() {
                 </li>
                 <li id="competitions">
                     <MdSupervisorAccount color="#17A2B8" size="2.5em" />
-                    <span>Tham gia 1 cuộc thi</span>
+                    <span>Tham gia 5 cuộc thi</span>
                 </li>
                 <hr />
                 <li id="ranking">

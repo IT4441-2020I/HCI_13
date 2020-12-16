@@ -1,7 +1,6 @@
-.guide-section {
-  padding: 0 3em;
+.guide-section h5 {
+  margin: 0 3rem;
 }
-
 .guide-section .letters {
   width: fit-content;
   margin: 1rem auto;

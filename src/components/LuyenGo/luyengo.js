@@ -182,7 +182,7 @@ export default class LuyenGo extends Component {
                     {/* </Tab> */}
                 </Tabs>
                 <div className="keyboards">
-                    <QwertyStenoKeyboard style={{ fontSize: 16 }} />
+                    <QwertyStenoKeyboard style={{ fontSize: 14 }} />
                     <StenoKeyboard style={{ fontSize: 20 }} />
                 </div>
             </>

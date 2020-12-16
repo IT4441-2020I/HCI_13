@@ -58,8 +58,8 @@ function LessionPracticeContent(props) {
                 onChangeHook={handleChange}
             />
             <div className="keyboards">
-                <QwertyStenoKeyboad style={{ fontSize: "13px" }} />
-                <StenoKeyboard style={{ fontSize: "20px" }} />
+                <QwertyStenoKeyboad style={{ fontSize: 12 }} />
+                <StenoKeyboard style={{ fontSize: 18 }} />
             </div>
             <Hands />
         </div>
