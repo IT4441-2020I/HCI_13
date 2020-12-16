@@ -14,6 +14,7 @@ export default class LuyenGo extends Component {
             text: null,
             typedWord: 0,
             tocky: "",
+            speed: 0
         };
         this.timer = 0;
         this.startTimer = this.startTimer.bind(this);
@@ -34,14 +35,19 @@ export default class LuyenGo extends Component {
     }
 
     onchangeText(e) {
-        var c = this.state.typedWord + 1;
-        if (this.state.text === null) {
+        if (this.state.typedWord === 0) {
             this.timer = setInterval(this.count, 1000);
         }
-        this.setState({
-            text: e.target.value,
-            typedWord: c,
-        });
+        let length = 0
+        let array = e.target.value
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] != ' ') {
+                length++
+            }
+        }
+        this.setState({ typedWord: length })
+        let v= (length/this.state.seconds)*60
+        this.setState({ speed: v })
     }
 
     secondsToTime(secs) {
@@ -84,7 +90,7 @@ export default class LuyenGo extends Component {
             seconds: seconds,
         });
         // Check if we're at zero.
-        if (seconds === 0) {
+        if (this.state.typedWord === 11) {
             clearInterval(this.timer);
         }
     }
@@ -133,13 +139,12 @@ export default class LuyenGo extends Component {
                                             {this.state.time.s}
                                             <div style={{ fontSize: 20 }}>
                                                 <span>
-                                                    Số từ đã gõ:{" "}
-                                                    {this.state.typedWord}
+                                                    Số từ đã gõ:{" " + this.state.typedWord}
                                                 </span>
                                                 <br />
-                                                <span>Số từ đúng: </span>
+                                                <span>Số từ đúng:{" " + this.state.typedWord}</span>
                                                 <br />
-                                                <span>Tốc độ:</span>
+                                                <span>Tốc độ: {" " + this.state.speed + " "} VPM</span>
                                             </div>
                                         </div>
                                     </div>

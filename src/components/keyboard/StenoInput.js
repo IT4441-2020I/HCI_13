@@ -59,7 +59,8 @@ function StenoInput(props) {
             onKeyDown={handleKeyDown}
             onKeyUp={handleKeyUp}
             onChange={handleChange}
-            style={{ width: "100%" }}
+            style={{ width: "100%", fontSize: "1.5rem" }}
+            
         />
     );
 }
