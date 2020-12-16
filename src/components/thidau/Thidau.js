@@ -39,14 +39,18 @@ function Thidau() {
                 const minute = parseInt(minuteRef.current.innerText);
                 const second = parseInt(secondRef.current.innerText);
 
+                if (minute === 0 && second === 0) {
+                    setGameEnded(true);
+                }
+
                 if (minuteRef.current !== null && secondRef.current !== null) {
-                    if (second === 59) {
-                        secondRef.current.innerText = "00";
-                        minuteRef.current.innerText = minute + 1;
-                    } else if (second < 9) {
-                        secondRef.current.innerText = `0${second + 1}`;
+                    if (second === 0) {
+                        secondRef.current.innerText = "59";
+                        minuteRef.current.innerText = minute - 1;
+                    } else if (second < 10) {
+                        secondRef.current.innerText = `0${second - 1}`;
                     } else {
-                        secondRef.current.innerText = second + 1;
+                        secondRef.current.innerText = second - 1;
                     }
                 }
             }, 1000);
@@ -76,7 +80,7 @@ function Thidau() {
                     />
                     <div className="timer shadow">
                         <span ref={minuteRef} className="minute">
-                            0
+                            2
                         </span>
                         <span>:</span>
                         <span ref={secondRef} className="second">

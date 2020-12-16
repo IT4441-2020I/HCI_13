@@ -14,7 +14,7 @@ export default class LuyenGo extends Component {
             text: null,
             typedWord: 0,
             tocky: "",
-            speed: 0
+            speed: 0,
         };
         this.timer = 0;
         this.startTimer = this.startTimer.bind(this);
@@ -38,16 +38,16 @@ export default class LuyenGo extends Component {
         if (this.state.typedWord === 0) {
             this.timer = setInterval(this.count, 1000);
         }
-        let length = 0
-        let array = e.target.value
+        let length = 0;
+        let array = e.target.value;
         for (let i = 0; i < array.length; i++) {
-            if (array[i] != ' ') {
-                length++
+            if (array[i] != " ") {
+                length++;
             }
         }
-        this.setState({ typedWord: length })
-        let v= (length/this.state.seconds)*60
-        this.setState({ speed: v })
+        this.setState({ typedWord: length });
+        let v = parseInt((length / this.state.seconds) * 60);
+        this.setState({ speed: v });
     }
 
     secondsToTime(secs) {
@@ -139,12 +139,22 @@ export default class LuyenGo extends Component {
                                             {this.state.time.s}
                                             <div style={{ fontSize: 20 }}>
                                                 <span>
-                                                    Số từ đã gõ:{" " + this.state.typedWord}
+                                                    Số từ đã gõ:
+                                                    {" " + this.state.typedWord}
                                                 </span>
                                                 <br />
-                                                <span>Số từ đúng:{" " + this.state.typedWord}</span>
+                                                <span>
+                                                    Số từ đúng:
+                                                    {" " + this.state.typedWord}
+                                                </span>
                                                 <br />
-                                                <span>Tốc độ: {" " + this.state.speed + " "} VPM</span>
+                                                <span>
+                                                    Tốc độ:{" "}
+                                                    {" " +
+                                                        this.state.speed +
+                                                        " "}{" "}
+                                                    VPM
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -165,11 +175,11 @@ export default class LuyenGo extends Component {
                         </div>
                     </Tab>
 
-                    <Tab eventKey="luyen-go-doan" title="Luyện gõ đoạn">
-                        <div className="tab-item-wrapper">
-                            <h5>Luyện gõ đoạn</h5>
-                        </div>
-                    </Tab>
+                    {/* <Tab eventKey="luyen-go-doan" title="Luyện gõ đoạn"> */}
+                    {/*     <div className="tab-item-wrapper"> */}
+                    {/*         <h5>Luyện gõ đoạn</h5> */}
+                    {/*     </div> */}
+                    {/* </Tab> */}
                 </Tabs>
                 <div className="keyboards">
                     <QwertyStenoKeyboard style={{ fontSize: 16 }} />
