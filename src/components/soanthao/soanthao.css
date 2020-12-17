@@ -2,13 +2,13 @@
   position: relative;
 }
 
-.soanthao .input-area svg {
+.soanthao .input-area #copy-icon {
   position: absolute;
   top: 0.25em;
   right: 0;
 }
 
-.soanthao .input-area svg:hover {
+.soanthao .input-area #copy-icon:hover {
   cursor: pointer;
 }
 
