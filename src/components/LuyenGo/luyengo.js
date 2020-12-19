@@ -41,7 +41,7 @@ export default class LuyenGo extends Component {
         let length = 0;
         let array = e.target.value;
         for (let i = 0; i < array.length; i++) {
-            if (array[i] != " ") {
+            if (array[i] !== " ") {
                 length++;
             }
         }
